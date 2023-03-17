@@ -1,0 +1,18 @@
+name: Docker React Web CI/CD
+
+run-name: ${{ github.actor }} is testing out GitHub Actions 🚀
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@3
+
+      - name: Build Docker Image
+        run: docker build -t ken888686/docker-react -f Dockerfile.dev
